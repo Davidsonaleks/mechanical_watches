@@ -1,2 +1,3 @@
 # mechanical_watches
-mechanical watches 
+
+run tsc and open index.htm
