@@ -10,8 +10,32 @@ body {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background-color: aqua;
+  background-color: #3f484a;
   position: relative;
+  box-shadow: 1px 10px 25px -6px rgba(0, 0, 0, 0.75);
+}
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 50%;
+}
+.clock::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border-radius: 50%;
+  z-index: 4;
 }
 
 .clock__arrow {
@@ -25,32 +49,62 @@ body {
   width: 100%;
   border-radius: 10px;
   left: 0;
-  background: red;
 }
 /* seconds */
 .clock__second {
-  width: 10px;
-  left: calc(50% - (10px / 2));
+  width: 3px;
+  left: calc(50% - (3px / 2));
+  z-index: 5;
 }
 .clock__second::before {
   top: 10px;
   height: calc(50% - 10px);
+  background: #ffc107;
 }
 /* minutes */
 .clock__minute {
-  width: 15px;
-  left: calc(50% - (15px / 2));
+  width: 6px;
+  left: calc(50% - (6px / 2));
+  z-index: 3;
 }
 .clock__minute::before {
   top: 20px;
   height: calc(50% - 20px);
+  background: white;
 }
 /* hour */
 .clock__hour {
-  width: 20px;
-  left: calc(50% - (20px / 2));
+  width: 10px;
+  left: calc(50% - (10px / 2));
+  z-index: 2;
 }
 .clock__hour::before {
-  top: 40px;
-  height: calc(50% - 40px);
+  top: 100px;
+  height: calc(50% - 100px);
+  background: white;
+}
+
+/*///////////// */
+
+.clock__dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #777;
+  transform-origin: 5px calc(250px - 15px);
+  left: calc(50% - 5px);
+  top: 15px;
+  border-radius: 50%;
+}
+.clock__dot-0 {
+  transform: rotate(0deg);
+}
+.clock__dot-3 {
+  transform: rotate(90deg);
+}
+.clock__dot-6 {
+  transform: rotate(180deg);
+}
+.clock__dot-9 {
+  transform: rotate(270deg);
 }
