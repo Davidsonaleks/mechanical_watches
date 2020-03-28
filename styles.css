@@ -1,0 +1,56 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.clock {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: aqua;
+  position: relative;
+}
+
+.clock__arrow {
+  position: absolute;
+  height: 100%;
+  top: 0;
+}
+.clock__arrow::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-radius: 10px;
+  left: 0;
+  background: red;
+}
+/* seconds */
+.clock__second {
+  width: 10px;
+  left: calc(50% - (10px / 2));
+}
+.clock__second::before {
+  top: 10px;
+  height: calc(50% - 10px);
+}
+/* minutes */
+.clock__minute {
+  width: 15px;
+  left: calc(50% - (15px / 2));
+}
+.clock__minute::before {
+  top: 20px;
+  height: calc(50% - 20px);
+}
+/* hour */
+.clock__hour {
+  width: 20px;
+  left: calc(50% - (20px / 2));
+}
+.clock__hour::before {
+  top: 40px;
+  height: calc(50% - 40px);
+}
